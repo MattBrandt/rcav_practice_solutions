@@ -13,5 +13,14 @@ class CalculationsController < ApplicationController
   end
 
   def pmt
+    # The route that sends us to this method is:
+    # get("/payment/:interest_rate/:number_of_payments/:present_value", { :controller => "calculations", :action => "pmt" })
+
+    rate = params[:interest_rate].to_f/100
+    nper = params[:number_of_payments].to_f
+    pv = params[:present_value].to_f
+
+    # Formula from http://en.wikipedia.org/wiki/Mortgage_calculator
+    @payment = (rate * pv) / (1 - (1 + rate)**-nper)
   end
 end
