@@ -1,4 +1,4 @@
-class CalculationController < ApplicationController
+class CalculationsController < ApplicationController
   def home
   end
 
