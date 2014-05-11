@@ -3,6 +3,8 @@ class CalculationsController < ApplicationController
   end
 
   def sq
+    @the_number = params[:number].to_f
+    @answer = @the_number ** 2
   end
 
   def square_root
