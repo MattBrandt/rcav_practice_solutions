@@ -7,7 +7,7 @@ class CalculationsController < ApplicationController
     @answer = @the_number ** 2
   end
 
-  def square_root
+  def sqrt
     @the_number = params[:number].to_f
     @answer = Math.sqrt(@the_number)
   end
